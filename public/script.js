@@ -39,7 +39,7 @@ function Delay(ms) {
 	}
 }
 
-function Restore() {
+function RestorePosition() {
 	db.ref().update({ 'motor2/steps': 2500 })
 	db.ref().update({ 'motor2/dir': 1 })
 	db.ref().update({ 'motor2/run': 1 })
@@ -85,7 +85,7 @@ function Init() {
 
 	firebase.database().ref('/motor1/pos').once('value').then((snapshot) => {
 		let posCurrent = snapshot.val();
-		let tiltCurrent = MaxMotor - posCurrent
+		let tiltCurrent = posCurrent
 
 		$("#range-tilt").asRange('set', tiltCurrent / MaxMotor * 100);
 
@@ -97,7 +97,7 @@ function Init() {
 		firebase.database().ref('/motor1/pos').once('value').then((snapshot) => {
 			var posCurrent = snapshot.val();
 			var tiltCurrent = $("#range-tilt").asRange('val') * MaxMotor / 100;
-			var posTarget = MaxMotor - tiltCurrent;
+			var posTarget = tiltCurrent;
 			var diff = posTarget - posCurrent
 
 
@@ -119,8 +119,8 @@ function Init() {
 
 
 	$("#restore").click(function () {
-		Restore()
-	});
+		RestorePosition
+		});
 
 
 
@@ -142,7 +142,7 @@ function Init() {
 
 		db.ref().update({ 'states/startMeas': 0 })
 		db.ref().update({ 'states/stopMeas': 1 })
-		Restore()
+		RestorePosition()
 
 		// getDoneMOCK();
 
