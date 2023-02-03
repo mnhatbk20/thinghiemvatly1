@@ -1,89 +1,217 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting 1</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.17.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.17.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.17.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js.cookie.min.js"></script>
+    <link rel="stylesheet" href="asRange.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Thí nghiệm - Luận Văn</title>
+
+</head>
+
+<body>
+    <div>
+       
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
+    <div id="screen1">
+        <div class="top">
+            <div class="logo-wrapper animate__animated  animate__fadeIn">
+                <div class="logo">
+                    <img src="logo1.png" alt="">
+                </div>
+                <div class="logo" id="logo2">
+                    <img src="logo2.png" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <h3 class="animate__animated animate__fadeIn">BỘ GIÁO DỤC VÀ ĐÀO TẠO <br>
+                    TRƯỜNG ĐẠI HỌC SƯ PHẠM TP. HỒ CHÍ MINH
+                </h3>
+                <h4>
+                    LUẬN VĂN THẠC SĨ
+                </h4>
+                <h5>
+                    Xây dựng và sử dụng thí nghiệm nghiên cứu “Chuyển động thẳng biến đổi đều” – Vật lý 10 có kết nối
+                    với
+                    điện thoại thông minh nhằm bồi dưỡng năng lực thực nghiệm của học sinh.
+
+                </h5>
+
+                <div class="author">
+                    <div class="span">
+                        Người hướng dẫn khoa học: TS. Trần Ngọc Chất <br>
+                        Học viên: <a href="https://www.facebook.com/thanhgiau.tran.71">Trần Thị Thanh Giàu</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="line"></div>
+        <div class="form animate__animated  animate__fadeInUp">
+
+            <div class="group-input">
+                <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+            </div>
+            <div class="group-input">
+                <input type="password" name="password" id="password" placeholder="Mật khẩu">
+            </div>
+
+            <button id="login">
+                Đăng Nhập
+            </button>
+            <div id="alert"></div>
+
+        </div>
+
+       
+
+    </div>
+    <div id="screen2" class="notlogin">
+       
+        <div class="top-nav">
+            <button id="back">Quay lại</button>
+            <button id="logout">Đăng xuất</button>
+        </div>
+
+        <div class="nav-meas">
+
+
+            <div id="nav-meas-s" class="nav-meas-item">
+                Khảo sát tọa độ của vật theo thời gian
+            </div>
+            <div id="nav-meas-v" class="nav-meas-item">
+                Khảo sát vật tốc của xe chuyển động trên máng nghiêng
+            </div>
+            <div id="nav-meas-a" class="nav-meas-item">
+                Xác định gia tốc a
+            </div>
+
+        </div>
+
+        <div class="monitor">
+            <div class="monitor-left">
+                <div class="panel">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                    <button id="reset">Reset</button>
+
+                </div>
+
+            </div>
+
+            <div class="monitor-right">
+                <div id="select-motor">
+                    <div id="range-tilt-input"> <input id="range-tilt" type="text"></div>
+                    <input id="range-tilt-ok" type="button" value="Điều chỉnh độ nghiêng">
+                    <input id="restore" type="button" value="Đặt lại vị trí xe">
+
+                </div>
+                              
+            </div>
+
+            <form class="select-time" action="">
+                <div class="select-time-item">
+                    <label for="">Tối đa:</label> <span id="max-time">0</span> ms
+                </div>
+                <div class="select-time-item">
+                    <label for="startTime">Bắt đầu</label>
+                    <input type="number" name="startTime" id="startTime" value="0" max="0" min="0">
+                </div>
+                <div class="select-time-item">
+                    <label for="endTime">Kết thúc</label>
+                    <input type="number" name="endTime" id="endTime" value="1000" max="0" min="0">
+                </div>
+                <div class="select-time-item">
+                    <input id="submit" type="button" value="↻">
+                </div>
+
+
+            </form>
+
+
+
+        </div>
+
+        <div class="nav-data">
+            <div id="nav-data-table" class="nav-data-item" data-name="table-item">
+                Bảng số liệu </div>
+            <div id="nav-data-chart" class="nav-data-item" data-name="chart-item">
+                Đồ thị </div>
+        </div>
+
+        <div class="info">
+
+            <div class="detail-info">
+                <div class="detail-info-item">
+                    <div id="table1" class="detail-info-item-child table-item">
+
+                    </div>
+                    <div class="chart-item detail-info-item-child">
+                        <div id="chart1"></div>
+
+                        <div class="eq" id="eq">
+                            Phương trình: x = <span id="eq_s"></span> <span>\((m)\)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-info-item">
+                    <div id="table2" class="detail-info-item-child  table-item">
+
+                    </div>
+                    <div class="chart-item detail-info-item-child">
+                        <div id="chart2"></div>
+
+                    </div>
+                </div>
+                <div class="detail-info-item">
+
+                    <div class="chart-item detail-info-item-child">
+                        <div id="chart3"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        const firebaseConfig = {
+            apiKey: "AIzaSyC1ZBTqMnWPFe7nx57DLRJs1yD-2SDLzHc",
+            databaseURL: "https://thanhgiau170297-default-rtdb.asia-southeast1.firebasedatabase.app",
+        };
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+
+        const db = firebase.database();
     </script>
-  </body>
+    <script src="jquery-asRange.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="kalman.js"></script>
+    <script src="calc.js"></script>
+    <script src="graph.js"></script>
+    <script src="table.js"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>
