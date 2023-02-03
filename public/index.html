@@ -1,217 +1,217 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js.cookie.min.js"></script>
-    <link rel="stylesheet" href="asRange.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <title>Thí nghiệm - Luận Văn</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js.cookie.min.js"></script>
+  <link rel="stylesheet" href="asRange.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>Thí nghiệm - Luận Văn</title>
 
 </head>
 
 <body>
-    <div>
-       
+  <div>
+
+  </div>
+
+  <div id="screen1">
+    <div class="top">
+      <div class="logo-wrapper animate__animated  animate__fadeIn">
+        <div class="logo">
+          <img src="logo1.png" alt="">
+        </div>
+        <div class="logo" id="logo2">
+          <img src="logo2.png" alt="">
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="animate__animated animate__fadeIn">BỘ GIÁO DỤC VÀ ĐÀO TẠO <br>
+          TRƯỜNG ĐẠI HỌC SƯ PHẠM TP. HỒ CHÍ MINH
+        </h3>
+        <h4>
+          LUẬN VĂN THẠC SĨ
+        </h4>
+        <h5>
+          Xây dựng và sử dụng thí nghiệm nghiên cứu “Chuyển động thẳng biến đổi đều” – Vật lý 10 có kết nối
+          với
+          điện thoại thông minh nhằm bồi dưỡng năng lực thực nghiệm của học sinh.
+
+        </h5>
+
+        <div class="author">
+          <div class="span">
+            Người hướng dẫn khoa học: TS. Trần Ngọc Chất <br>
+            Học viên: <a href="https://www.facebook.com/thanhgiau.tran.71">Trần Thị Thanh Giàu</a>
+
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-    <div id="screen1">
-        <div class="top">
-            <div class="logo-wrapper animate__animated  animate__fadeIn">
-                <div class="logo">
-                    <img src="logo1.png" alt="">
-                </div>
-                <div class="logo" id="logo2">
-                    <img src="logo2.png" alt="">
-                </div>
-            </div>
-            <div class="content">
-                <h3 class="animate__animated animate__fadeIn">BỘ GIÁO DỤC VÀ ĐÀO TẠO <br>
-                    TRƯỜNG ĐẠI HỌC SƯ PHẠM TP. HỒ CHÍ MINH
-                </h3>
-                <h4>
-                    LUẬN VĂN THẠC SĨ
-                </h4>
-                <h5>
-                    Xây dựng và sử dụng thí nghiệm nghiên cứu “Chuyển động thẳng biến đổi đều” – Vật lý 10 có kết nối
-                    với
-                    điện thoại thông minh nhằm bồi dưỡng năng lực thực nghiệm của học sinh.
+    <div class="line"></div>
+    <div class="form animate__animated  animate__fadeInUp">
 
-                </h5>
+      <div class="group-input">
+        <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+      </div>
+      <div class="group-input">
+        <input type="password" name="password" id="password" placeholder="Mật khẩu">
+      </div>
 
-                <div class="author">
-                    <div class="span">
-                        Người hướng dẫn khoa học: TS. Trần Ngọc Chất <br>
-                        Học viên: <a href="https://www.facebook.com/thanhgiau.tran.71">Trần Thị Thanh Giàu</a>
+      <button id="login">
+        Đăng Nhập
+      </button>
+      <div id="alert"></div>
 
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="line"></div>
-        <div class="form animate__animated  animate__fadeInUp">
-
-            <div class="group-input">
-                <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
-            </div>
-            <div class="group-input">
-                <input type="password" name="password" id="password" placeholder="Mật khẩu">
-            </div>
-
-            <button id="login">
-                Đăng Nhập
-            </button>
-            <div id="alert"></div>
-
-        </div>
-
-       
-
-    </div>
-    <div id="screen2" class="notlogin">
-       
-        <div class="top-nav">
-            <button id="back">Quay lại</button>
-            <button id="logout">Đăng xuất</button>
-        </div>
-
-        <div class="nav-meas">
-
-
-            <div id="nav-meas-s" class="nav-meas-item">
-                Khảo sát tọa độ của vật theo thời gian
-            </div>
-            <div id="nav-meas-v" class="nav-meas-item">
-                Khảo sát vật tốc của xe chuyển động trên máng nghiêng
-            </div>
-            <div id="nav-meas-a" class="nav-meas-item">
-                Xác định gia tốc a
-            </div>
-
-        </div>
-
-        <div class="monitor">
-            <div class="monitor-left">
-                <div class="panel">
-                    <button id="start">Start</button>
-                    <button id="stop">Stop</button>
-                    <button id="reset">Reset</button>
-
-                </div>
-
-            </div>
-
-            <div class="monitor-right">
-                <div id="select-motor">
-                    <div id="range-tilt-input"> <input id="range-tilt" type="text"></div>
-                    <input id="range-tilt-ok" type="button" value="Điều chỉnh độ nghiêng">
-                    <input id="restore" type="button" value="Đặt lại vị trí xe">
-
-                </div>
-                              
-            </div>
-
-            <form class="select-time" action="">
-                <div class="select-time-item">
-                    <label for="">Tối đa:</label> <span id="max-time">0</span> ms
-                </div>
-                <div class="select-time-item">
-                    <label for="startTime">Bắt đầu</label>
-                    <input type="number" name="startTime" id="startTime" value="0" max="0" min="0">
-                </div>
-                <div class="select-time-item">
-                    <label for="endTime">Kết thúc</label>
-                    <input type="number" name="endTime" id="endTime" value="1000" max="0" min="0">
-                </div>
-                <div class="select-time-item">
-                    <input id="submit" type="button" value="↻">
-                </div>
-
-
-            </form>
-
-
-
-        </div>
-
-        <div class="nav-data">
-            <div id="nav-data-table" class="nav-data-item" data-name="table-item">
-                Bảng số liệu </div>
-            <div id="nav-data-chart" class="nav-data-item" data-name="chart-item">
-                Đồ thị </div>
-        </div>
-
-        <div class="info">
-
-            <div class="detail-info">
-                <div class="detail-info-item">
-                    <div id="table1" class="detail-info-item-child table-item">
-
-                    </div>
-                    <div class="chart-item detail-info-item-child">
-                        <div id="chart1"></div>
-
-                        <div class="eq" id="eq">
-                            Phương trình: x = <span id="eq_s"></span> <span>\((m)\)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="detail-info-item">
-                    <div id="table2" class="detail-info-item-child  table-item">
-
-                    </div>
-                    <div class="chart-item detail-info-item-child">
-                        <div id="chart2"></div>
-
-                    </div>
-                </div>
-                <div class="detail-info-item">
-
-                    <div class="chart-item detail-info-item-child">
-                        <div id="chart3"></div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 
 
+  </div>
+  <div id="screen2" class="notlogin">
+
+    <div class="top-nav">
+      <button id="back">Quay lại</button>
+      <button id="logout">Đăng xuất</button>
+    </div>
+
+    <div class="nav-meas">
+
+
+      <div id="nav-meas-s" class="nav-meas-item">
+        Khảo sát tọa độ của vật theo thời gian
+      </div>
+      <div id="nav-meas-v" class="nav-meas-item">
+        Khảo sát vật tốc của xe chuyển động trên máng nghiêng
+      </div>
+      <div id="nav-meas-a" class="nav-meas-item">
+        Xác định gia tốc a
+      </div>
+
+    </div>
+
+    <div class="monitor">
+      <div class="monitor-left">
+        <div class="panel">
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <button id="reset">Reset</button>
+
+        </div>
+
+      </div>
+
+      <div class="monitor-right">
+        <div id="select-motor">
+          <div id="range-tilt-input"> <input id="range-tilt" type="text"></div>
+          <input id="range-tilt-ok" type="button" value="Điều chỉnh độ nghiêng">
+          <input id="restore" type="button" value="Đặt lại vị trí xe">
+
+        </div>
+
+      </div>
+
+      <form class="select-time" action="">
+        <div class="select-time-item">
+          <label for="">Tối đa:</label> <span id="max-time">0</span> ms
+        </div>
+        <div class="select-time-item">
+          <label for="startTime">Bắt đầu</label>
+          <input type="number" name="startTime" id="startTime" value="0" max="0" min="0">
+        </div>
+        <div class="select-time-item">
+          <label for="endTime">Kết thúc</label>
+          <input type="number" name="endTime" id="endTime" value="1000" max="0" min="0">
+        </div>
+        <div class="select-time-item">
+          <input id="submit" type="button" value="↻">
+        </div>
+
+
+      </form>
 
 
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyC1ZBTqMnWPFe7nx57DLRJs1yD-2SDLzHc",
-            databaseURL: "https://thanhgiau170297-default-rtdb.asia-southeast1.firebasedatabase.app",
-        };
+    </div>
 
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
+    <div class="nav-data">
+      <div id="nav-data-table" class="nav-data-item" data-name="table-item">
+        Bảng số liệu </div>
+      <div id="nav-data-chart" class="nav-data-item" data-name="chart-item">
+        Đồ thị </div>
+    </div>
 
-        const db = firebase.database();
-    </script>
-    <script src="jquery-asRange.min.js"></script>
-    <script src="auth.js"></script>
-    <script src="kalman.js"></script>
-    <script src="calc.js"></script>
-    <script src="graph.js"></script>
-    <script src="table.js"></script>
-    <script src="script.js"></script>
+    <div class="info">
+
+      <div class="detail-info">
+        <div class="detail-info-item">
+          <div id="table1" class="detail-info-item-child table-item">
+
+          </div>
+          <div class="chart-item detail-info-item-child">
+            <div id="chart1"></div>
+
+            <div class="eq" id="eq">
+              Phương trình: x = <span id="eq_s"></span> <span>\((m)\)</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-info-item">
+          <div id="table2" class="detail-info-item-child  table-item">
+
+          </div>
+          <div class="chart-item detail-info-item-child">
+            <div id="chart2"></div>
+
+          </div>
+        </div>
+        <div class="detail-info-item">
+
+          <div class="chart-item detail-info-item-child">
+            <div id="chart3"></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBxnJwsAkmSsvvA82b7KKzh58aayYzV7Y",
+      databaseURL: "https://thinghiemvatly1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.database();
+  </script>
+  <script src="jquery-asRange.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="kalman.js"></script>
+  <script src="calc.js"></script>
+  <script src="graph.js"></script>
+  <script src="table.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
