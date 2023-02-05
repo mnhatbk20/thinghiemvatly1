@@ -119,7 +119,7 @@ function Init() {
 
 
 	$("#restore").click(function () {
-		RestorePosition
+		RestorePosition()
 		});
 
 
