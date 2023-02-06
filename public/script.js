@@ -40,7 +40,7 @@ function Delay(ms) {
 }
 
 function RestorePosition() {
-	db.ref().update({ 'motor2/steps': 2500 })
+	db.ref().update({ 'motor2/steps': 2300 })
 	db.ref().update({ 'motor2/dir': 1 })
 	db.ref().update({ 'motor2/run': 1 })
 
@@ -53,7 +53,7 @@ function RestorePosition() {
 			if (data == 0) {
 				if (!once) {
 					once = true
-					db.ref().update({ 'motor2/steps': 2500 })
+					db.ref().update({ 'motor2/steps': 2300 })
 					db.ref().update({ 'motor2/dir': 0 })
 					db.ref().update({ 'motor2/run': 1 })
 				}
@@ -119,7 +119,7 @@ function Init() {
 
 
 	$("#restore").click(function () {
-		RestorePosition
+		RestorePosition()
 		});
 
 
