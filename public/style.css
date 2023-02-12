@@ -40,12 +40,7 @@ body {
     padding: 3px 6px;
 }
 
-#sync-btn{
-    position: fixed;
-    bottom: 0;
-    width: 1em;
-    height: 1em;
-}
+
 
 .asRange .asRange-pointer:before,
 .asRange .asRange-selected {
@@ -529,6 +524,14 @@ input[type=button]:hover {
     width: 100%;
     display: flex;
     justify-content: end;
+}
+
+#screen1 #sync-btn{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
 }
 
 @media only screen and (max-width: 600px) {
