@@ -62,6 +62,14 @@ function RestorePosition() {
 	}
 }
 
+function InitRangeBar(){
+	firebase.database().ref('/motor1/pos').once('value').then((snapshot) => {
+		let posCurrent = snapshot.val();
+		let tiltCurrent = posCurrent
+		$("#range-tilt").asRange('set', tiltCurrent / MaxMotor * 100);
+	})
+}
+
 function Init() {
 
 
@@ -83,17 +91,8 @@ function Init() {
 
 
 
-	firebase.database().ref('/motor1/pos').once('value').then((snapshot) => {
-		let posCurrent = snapshot.val();
-		let tiltCurrent = posCurrent
-
-		$("#range-tilt").asRange('set', tiltCurrent / MaxMotor * 100);
-
-
-	})
-
+	InitRangeBar()
 	$("#range-tilt-ok").click(function () {
-
 		firebase.database().ref('/motor1/pos').once('value').then((snapshot) => {
 			var posCurrent = snapshot.val();
 			var tiltCurrent = $("#range-tilt").asRange('val') * MaxMotor / 100;
@@ -116,11 +115,35 @@ function Init() {
 	})
 
 
+	firebase.database().ref('/motor1/run').on('value', (snapshot) => {
+		let run = snapshot.val();
+		if (run == 1) {
+			$("#range-tilt-ok").addClass("disabled")
+		} else {
+			$("#range-tilt-ok").removeClass("disabled")
+			InitRangeBar()
+		}
+	})
+
+	firebase.database().ref('/motor2/run').on('value', (snapshot) => {
+		let run = snapshot.val();
+		if (run == 1) {
+			$("#restore-btn").addClass("disabled")
+		} else {
+			$("#restore-btn").removeClass("disabled")
+		}
+	})
+
+	$("#sync-btn").click(function () {
+		db.ref().update({ 'motor1/pos': 0 })
+		db.ref().update({ 'motor2/pos': 0 })
+	})
 
 
-	$("#restore").click(function () {
+
+	$("#restore-btn").click(function () {
 		RestorePosition()
-		});
+	});
 
 
 
@@ -384,7 +407,7 @@ function getDoneMOCK() {
 		dataRaw.push(t * t * 0.0005 + noise)
 	}
 
-	maxLength = dataRaw.length*delayESP
+	maxLength = dataRaw.length * delayESP
 
 	isHasData = true
 
