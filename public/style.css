@@ -525,9 +525,11 @@ input[type=button]:hover {
     display: flex;
     justify-content: end;
 }
-
+#screen1 {
+    position: relative;
+}
 #screen1 #sync-btn{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 1em;
