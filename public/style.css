@@ -534,7 +534,10 @@ input[type=button]:hover {
     left: 50%;
     transform: translate(-50%,0%);
     width: 100%;
-    height: 1em;
+    height: 0.75em;
+}
+#screen1 #sync-btn:hover{
+    background-color: #c0c5ff;
 }
 
 @media only screen and (max-width: 600px) {
