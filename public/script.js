@@ -325,6 +325,33 @@ function drawFull() {
 
 }
 
+function ProcessData(data){
+	
+	isHasData = true
+	console.log(data)
+	dataRaw = data.split(",")
+	console.log(dataRaw)
+
+	maxLength = dataRaw.length
+
+	$('#max-time').text(`${maxLength}`)
+	$('.select-time-item input').attr('max', `${maxLength}`)
+	$('.select-time-item input[name=endTime]').attr('value', `${maxLength}`)
+
+	startTime = parseInt($('#startTime').val())
+	endTime = maxLength
+	drawFull()
+
+
+	$('#submit').click(function (e) {
+		e.preventDefault();
+
+		startTime = parseInt($('#startTime').val())
+		endTime = parseInt($('#endTime').val())
+		drawFull()
+	});
+}
+
 function getDone() {
 
 	$('.detail-info-item').addClass('hide')
@@ -345,36 +372,26 @@ function getDone() {
 	$("#reset").show();
 	$("#stop").hide()
 
-	firebase.database().ref('/data').once('value').then((snapshot) => {
-
-		let data = snapshot.val();
+	var data1 =""
+	var data = ""
+	var countPacket = 0
+	firebase.database().ref('/data1').once('value').then((snapshot) => {
+		countPacket = 1
+		data1 = snapshot.val();
+		data = data1
 		isHasData = true
-
-		console.log(data)
-		dataRaw = data.split(",")
-		console.log(dataRaw)
-
-		maxLength = dataRaw.length
-
-		$('#max-time').text(`${maxLength}`)
-		$('.select-time-item input').attr('max', `${maxLength}`)
-		$('.select-time-item input[name=endTime]').attr('value', `${maxLength}`)
-
-		startTime = parseInt($('#startTime').val())
-		endTime = maxLength
-		drawFull()
-
-
-		$('#submit').click(function (e) {
-			e.preventDefault();
-
-			startTime = parseInt($('#startTime').val())
-			endTime = parseInt($('#endTime').val())
-			drawFull()
-		});
-
-
-	});
+	})
+	var data2 =""
+	firebase.database().ref('/data2').once('value').then((snapshot) => {
+		data2 = snapshot.val();
+		if (countPacket == 1){
+			data += ","+ data2
+			countPacket =2
+		}
+		ProcessData(data)
+	})
+		
+	
 }
 
 function getDoneMOCK() {
