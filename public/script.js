@@ -152,8 +152,7 @@ function Init() {
 		$("#reset").hide();
 		$("#stop").show()
 
-		db.ref().update({ 'states/startMeas': 1 })
-		db.ref().update({ 'states/stopMeas': 0 })
+		db.ref().update({ 'state': 1 })
 	});
 
 
@@ -162,9 +161,7 @@ function Init() {
 		$("#reset").show();
 		$("#stop").hide()
 
-
-		db.ref().update({ 'states/startMeas': 0 })
-		db.ref().update({ 'states/stopMeas': 1 })
+		db.ref().update({ 'state': 0 })
 		RestorePosition()
 
 		// getDoneMOCK();
@@ -186,7 +183,7 @@ function Init() {
 		DashboardFirst()
 	})
 
-	var doneEvent = firebase.database().ref('states/done');
+	var doneEvent = firebase.database().ref('done');
 	doneEvent.on('value', (snapshot) => {
 		let done = snapshot.val();
 		if (done == 1) {
