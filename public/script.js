@@ -376,10 +376,11 @@ function getDone() {
 	var data = ""
 	var countPacket = 0
 	firebase.database().ref('/data1').once('value').then((snapshot) => {
-		countPacket = 1
 		data1 = snapshot.val();
-		data = data1
-		isHasData = true
+		if (countPacket ==0) {
+			data = data1
+			countPacket = 1
+		}
 	})
 	var data2 =""
 	firebase.database().ref('/data2').once('value').then((snapshot) => {
