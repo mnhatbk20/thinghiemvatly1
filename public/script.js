@@ -162,7 +162,7 @@ function Init() {
 		$("#stop").hide()
 
 		db.ref().update({ 'state': 0 })
-		RestorePosition()
+		// RestorePosition()
 
 		// getDoneMOCK();
 
